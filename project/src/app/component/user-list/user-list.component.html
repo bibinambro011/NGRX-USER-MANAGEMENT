@@ -1,0 +1,47 @@
+<mat-card style="min-height: 500px;">
+    <mat-card-header>
+        <h1>User Listing</h1>
+        <button (click)="FunctionAdd()" mat-raised-button color="primary" style="margin-left: 70%;">Add Associate
+            (+)</button>
+    </mat-card-header>
+    <mat-card-content>
+        <table matSort mat-table [dataSource]="datasource" class="mat-elevation-z8">
+            <ng-container matColumnDef="code">
+                <th   mat-header-cell *matHeaderCellDef> Code</th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+              </ng-container>
+              <ng-container matColumnDef="image">
+                  <th   mat-header-cell *matHeaderCellDef>Profile Image</th>
+                  <td mat-cell *matCellDef="let element">
+                    <img *ngIf="element.profile" src="http://127.0.0.1:3000/image/{{element.profile}}" style="width: auto;height: auto;max-width: 100px;max-height: 100px;" alt="">
+                    <img *ngIf="!element.profile" src="http://127.0.0.1:3000/image/image-1703135833884.jpg" style="width: auto;height: auto;max-width: 80px;max-height: 80px;" alt="">
+                  </td>
+              </ng-container>
+            <ng-container matColumnDef="name">
+                <th   mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let element">{{element.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+                <th   mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let element">{{element.email}}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <button (click)="FunctionEdit(element.email)" mat-raised-button color="primary" style="margin-right: 8px;">Edit</button>
+                    <button (click)="FunctionDelete(element.email)" mat-raised-button color="accent">Delete</button>
+                </td>
+               
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColums"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayedColums"></tr>
+        </table>
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+      <button (click)="logout()" mat-raised-button color="accent">Logout</button>
+        
+    </mat-card-footer>
+  </mat-card>

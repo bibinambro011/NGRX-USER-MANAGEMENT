@@ -1,0 +1,21 @@
+<div >
+    <div class="wrapper">
+            <div class="logo">
+                <img src="https://www.logolynx.com/images/logolynx/s_23/23938578fb8d88c02bc59906d12230f3.png" alt="">
+            </div>
+            <div class="text-center mt-4 name">
+                ADMIN LOGIN
+            </div>
+            <form  [formGroup]="adminLoginform">
+                <div class="form-field d-flex align-items-center">
+                    <span class="far fa-user"></span>
+                    <input type="text" formControlName="mail" id="userName" placeholder="Username">
+                </div>
+                <div class="form-field d-flex align-items-center">
+                    <span class="fas fa-key"></span>
+                    <input type="password" formControlName="password" id="pwd" placeholder="Password">
+                </div>
+                <button class="btn mt-3" (click)="Proceedlogin()">Login</button>
+            </form>
+        </div>
+    </div>

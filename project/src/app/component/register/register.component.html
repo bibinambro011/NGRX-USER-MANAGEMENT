@@ -1,0 +1,30 @@
+
+<form class="example-form" [formGroup]="registerform" (ngSubmit)="Proceedregister()">
+<mat-card>
+    <mat-card-header>User Registration</mat-card-header>
+    <mat-card-content>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>User name</mat-label>
+          <input  matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label> email</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>password</mat-label>
+            <input matInput formControlName="password">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>confirm password</mat-label>
+            <input matInput formControlName="confirmPassword">
+          </mat-form-field>
+          <button mat-raised-button color="primary" >Submit</button>
+          <a routerLink='/login' mat-raised-button color="accent">Back to login</a>
+      
+      </mat-card-content>
+  </mat-card>
+</form>
+  
+  

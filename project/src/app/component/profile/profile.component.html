@@ -1,0 +1,22 @@
+<div class="Profilebody">
+    <mat-card>
+      <mat-card-header>
+        <h1>User Profile</h1>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>Name: {{userdata.name}}</h3>
+        <h3>Email:<span>{{userdata.email}}</span></h3> 
+        <img  src="http://127.0.0.1:3000/image/{{img}}" alt="" 
+        style="width: 10rem;height: 10rem;border-radius:  50%;cursor:pointer;">
+       
+        <input type="file" name="image" #inpImg hidden (change)="fileUpload($event)">
+       
+      </mat-card-content>
+      <mat-card-actions>
+        <button color="primary" (click)="changeImg(inpImg)" mat-raised-button>change Image</button>
+        
+        <button color="accent" (click)="logout()" mat-raised-button>Logout</button>
+        
+    </mat-card-actions>
+    </mat-card>
+  </div>

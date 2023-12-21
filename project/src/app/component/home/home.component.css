@@ -1,0 +1,35 @@
+/* src/app/home/home.component.css */
+
+div {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: red;
+  padding: 20px;
+  border: 1px solid #b91010;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #0056b3;
+}
